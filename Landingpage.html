@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page using HTML and CSS</title>
+    <style type ="text/css">
+        *{padding:0;margin:0;box-sizing:border-box;}
+        header{
+            width:100%;
+            height:120vh;
+            background:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.2)),
+            url("https://www.adalot.com/thumbs/thumb-guide-restaurant-website-development-1920x1080-people-eating-together.jpg");
+            background-size:cover;
+        }
+        nav{
+            width:100%;
+            height:100px;
+            
+            color:white;
+            display:flex;
+            justify-content:space-around;
+            align-items: center;
+        }
+        .logo{
+            font-size:2em;
+            letter-spacing: 1px;
+            text-decoration: solid;
+            font-style: italic;
+            font-family:Lavenda;
+            opacity: 0.9;
+            padding:55px;
+
+        }
+        .menu a{
+            text-decoration: none;
+            color:bisque;
+            padding:10px 20px;
+            font-size:20px;
+            position: relative;
+            
+        }
+        .menu a:before{
+            content:'';
+            position: absolute;
+            top:0;
+            left:0;
+            width:0%;
+            height:100%;
+           border-bottom:2px solid indianred;
+           transition: 0.4s linear;
+
+        }
+        .menu a:hover:before{
+            width:90%;
+        }
+        .h-txt{
+            max-width: 650px;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            text-align: center;
+            color:white;
+
+        }
+        .h-txt span{
+            letter-spacing:5px ;
+        
+        }
+        .h-txt h1{
+            font-size: 3.5em;
+
+        }
+        .h-txt a{
+            text-decoration: none;
+            background-color: indianred;
+            color:white;
+            padding:10px 20px;
+            letter-spacing: 5px;
+            transition:0.4s;
+        }
+        .h-txt a:hover{
+            background:transparent;
+            border:1px solid indian red;
+            
+
+        }
+        .menu{
+            padding:25px 0 25px 0;
+            
+
+        }
+        .section{
+            padding:25px 0 25px 0;
+            text-align:center;
+            font-size:2rem;
+            font-family: verdana;
+        }
+    .menu_row{
+        display: flex;
+        padding:0 100px 0 100px;
+    }
+    .menu_col{
+        box-shadow:2px 2px 2px #bbb;
+        border:1px solid #bbb;
+        background-color: #fff;
+        margin:10px;
+        padding:10px;
+        flex:1; 
+        transition:0.2s all;
+    }
+
+    .menu_col h2{
+        background-color: red;
+        color:#fff;
+        text-align:center;
+        padding:5px;
+        font-family:cursive;
+    }
+    .image{
+        width:150px;
+        height: 150px;
+        border-radius: 50%;
+        padding:5px;
+        border:2px solid orange;
+    }
+    .image img{
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+    
+    .box{
+        display:flex;
+        flex-direction: column;
+        align-items:center;
+        text-align:center;
+        margin:5px;
+    }
+   .menu_col:hover{
+    transform: scale(1.04);
+   }
+   @media screen and (max-width:1000px){
+    .menu_col{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media screen and (max-width:768px){
+    .menu_col{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+.DRINKS{
+     padding:25px 0 25px 0;
+}
+
+.Drink{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 30px 20px;
+    grid-column-gap: 20px;
+    grid-row-gap: 30px;
+}
+.Drinks img{
+    width:100%;
+    height: 300px;
+    object-fit: cover;
+    cursor:pointer;
+    transition: 0.2s ease;
+
+}
+.Drinks img:hover{
+    transform: scale(1.04);
+}
+.Drinks h3{
+    padding:5px;
+    text-align:center;
+}
+.Drinks h4{
+    padding:5px;
+    text-align: center;
+
+}
+@media screen and (max-width:1000px){
+    .Drink{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media screen and (max-width:768px){
+    .Drink{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+.weddings{
+            position: relative;
+            text-align: center;
+            color: aliceblue;
+        }
+        .wed{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid gray;
+            width: 100%;
+            font-size: 50px;
+            color: beige;
+            background-color:indianred;
+            padding: 12px;
+            font-family: 'Lucida Handwriting';
+        }
+        .weddings{
+           transition: width 2s, height 2s;
+        }
+        .wed_link:hover{
+            height: 600px;
+            width: 500px;
+            border-radius: 13%;
+        }
+        .Talent_shows{
+            position: relative;
+            text-align: center;
+        }
+        .Tal_shows{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid gray;
+            width: 100%;
+            font-size: 50px;
+            color: beige;
+            background-color:indianred;
+            padding: 12px;
+            font-family: 'Lucida Handwriting';
+        }
+        .Standup_Comedy{
+            position: relative;
+            text-align: center;
+        }
+        .Stand_Comedy{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid gray;
+            width: 100%;
+            font-size: 40px;
+            color: beige;
+            background-color:indianred;
+            padding: 12px;
+            font-family: 'Lucida Handwriting';
+        }
+        .Private{
+            position: relative;
+            text-align: center;
+        }
+        .ceve{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid gray;
+            width: 100%;
+            font-size: 40px;
+            color: beige;
+            background-color:indianred;
+            padding: 12px;
+            font-family:'Lucida Handwriting';
+
+        }
+        .Birthday_parties{
+            position: relative;
+            text-align: center;
+        }
+        .birth{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid gray;
+            width: 100%;
+            font-size: 40px;
+            color: beige;
+            background-color:indianred;
+            padding: 12px;
+            font-family:'Lucida Handwriting';
+        }
+        
+    
+        #eve_headding{
+            color: rgb(112, 99, 87);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction:row;
+            padding: 45px 20px 0px 20px;
+            font-family: 'Lucida Handwriting';
+            font-size: 40px;
+            font-weight:bolder;
+            word-spacing: 17px;
+            letter-spacing: 10px;
+        }
+        
+        #Events{
+            background-image: url("https://t4.ftcdn.net/jpg/02/38/09/01/360_F_238090138_Eej9cRVqoAyV75YGOjhRGvuQYNTwOjCT.jpg");
+            background-attachment:fixed;
+            background-size: cover;  
+            margin-top: -52px;
+            
+        }
+        #menu{
+            background-image: url("https://img.freepik.com/premium-photo/black-empty-plate-cutlery-fork-knife-dark-textured-background-mockup-concept-design-restaurant-menu-website-design_114160-996.jpg");
+            background-attachment:fixed;
+            background-size: cover;  
+            margin-top: -52px;
+            color:black;
+            font-family: 'Lucida Handwriting';
+            font-family: cursive;
+        
+
+        }
+        #Drinks{
+            background-image: url("https://previews.123rf.com/images/valentint/valentint1704/valentint170400744/75401541-restaurant-icon-restaurant-website-button-on-white-background.jpg");
+            background-attachment:fixed;
+            background-size: cover;  
+            margin-top: -52px;
+            color:black;
+            font-family: 'Lucida Handwriting';
+        
+
+        }
+        #about{
+            padding: 25px 0 25px 0;
+            
+        }
+        #about_row{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding:0 100px 0 100px;
+            text-align: left;
+        }
+        .about_col{
+            flex:1;
+            text-align: left;
+        }
+        #about_img{
+            width:300px;
+            height: 300px;
+            border-radius: 50%;
+            margin:auto;
+            border-image-width: auto;
+        }
+        #about_img img{
+            width:100%;
+            height:100%;
+            border-radius: 50%;
+            object-fit: fill;
+        }
+        .about_col h1{
+            text-align: center;
+            font-family: cursive;
+        }
+        .about_col p{
+            text-align: justify;
+            font-weight: bold ;
+        }
+        #about_img{
+            width:220px;
+            height: 220px;
+            border-radius: 50%;
+            margin:auto;
+            border-image-width: auto;
+       
+        }
+        #about{
+            background-image: url("https://4kwallpapers.com/images/walls/thumbs_3t/4523.jpg");
+            background-attachment:scroll;
+            background-size: cover;  
+            margin-top: -52px;
+            color:burlywood;
+        }
+        #Contact{
+            padding:25px 0 25px 0;
+        }
+        #Contact_row{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 100px 0 100px;
+            flex-wrap: wrap;
+        }
+        .Contact_col{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex:1;
+        }
+        .Contact_col p h3{
+            font-weight: bold;
+            color:#292929;
+            margin:10px;
+        }
+       
+        .Contact_col p a{
+            text-decoration: none;
+            color:#292929;
+            
+        }
+        #social a{
+            color:black;
+            margin:3px;
+        }
+        .Contact_col form{
+            display:flex;
+            flex-direction: column;
+            background-color:bisque;
+            width: 70%;
+            padding: 20px 40px 20px 20px;
+        }
+        .Contact_col form h2{
+            text-align: center;
+            font-family: cursive;
+
+        }
+        .Contact_col form input{
+            width:100%;
+            height:17pt;
+            padding:5px;
+            margin:5px;
+        }
+        .Contact_col form textarea{
+            width: 100%;
+            height:17pt;
+            padding:5px;
+            margin:5px;
+
+        }
+        .Contact_col form button{
+            margin:auto;
+            padding:10px;
+            color:#fff;
+            background-color: red;
+            border: 1px solid red;
+        }
+        #footer{
+            background-color: #292929;
+            padding: 20px;
+            position: relative;
+        }
+        #footer h5{
+            text-align: center;
+            color:orange;
+        }
+        #footer h5 a{
+            color:#fff;
+            text-decoration: none;
+        }
+        #top{
+            position: absolute;
+            bottom:12px;
+            right:12px;
+
+        }
+        #top a{
+            color:#fff;
+            font-size: 1.2rem;
+        }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+
+</head>
+<body>
+    <header>
+        <nav>
+             <div class="logo">
+                YumInTum
+             </div>
+             <div class="menu">
+                <a href="#menu">MENU</a>
+                <a href="#Drinks">DRINKS</a>
+                <a href="#Events">EVENTS</a>
+                <a href="#Contact">CONTACT</a>
+                <a href="#about">ABOUT US</a>
+            </nav>
+           <section class="h-txt">
+            <span>Always Hungry?</span>
+            <h1>It's Time for Best Food &#127860;</h1>
+            <br>
+            <a href="#">Order Now</a>
+        </section>
+    </header>
+    <!--Menu section begin-->
+    <div id="menu">
+    <div class="menu">
+        <h1 class="section">Menu</h1>
+        <div class="menu_row">
+            <div class="menu_col">
+                <h2>Soups</h2>
+                <div class="box">
+                    <div class="image">
+                        <img src="https://im.indiatimes.in/facebook/2014/Feb/1814862_1437739453.jpg">
+                    </div>
+                
+                <div>
+                    <h3>Vegetable shorba</h3>
+                    <h4>Rs 90</h4>
+                </div>
+            </div>
+        
+    <div class="box">
+        <div class="image">
+            <img src="https://j6e2i8c9.rocketcdn.me/wp-content/uploads/2018/12/Instant-Pot-Tamatar-ka-shorba-2.jpg">
+        </div>
+    
+    <div>
+        <h3>Tomato shorba</h3>
+        <h4>Rs 75</h4>
+    </div>
+    </div>
+    <div class="box">
+        <div class="image">
+            <img src="https://www.funfoodfrolic.com/wp-content/uploads/2020/12/Sweet-Corn-Soup-TThumbnail.jpg">
+        </div>
+    
+    <div>
+        <h3>Sweet Corn soup </h3>
+        <h4>Rs 80</h4>
+    </div>
+    </div>
+    <div class="box">
+        <div class="image">
+            <img src="https://masalachilli.com/wp-content/uploads/2021/07/Hot-and-Sour-Soup-3.jpg">
+        </div>
+        <div>
+            <h3>Veg Hot and Sour soup </h3>
+            <h4>Rs 80</h4>
+        </div>
+        </div>
+        <div class="box">
+            <div class="image">
+                <img src="https://cravingtasty.com/wp-content/uploads/2016/08/Best-Mulligatawny-Soup-Recipe-1.jpg">
+            </div>
+        
+        <div>
+            <h3>Mulligatawny soup</h3>
+            <h4>Rs 90</h4>
+        </div>
+    </div>
+    </div>
+    
+        <div class="menu_col">
+            <h2>Starters</h2>
+            <div class="box">
+                <div class="image">
+                    <img src="https://i.ytimg.com/vi/0RaJWTR93rg/maxresdefault.jpg">
+                </div>
+            
+            <div>
+                <h3>Paneer Babycorn</h3>
+                <h4>Rs 170</h4>
+            </div>
+        </div>
+    
+<div class="box">
+    <div class="image">
+        <img src="https://www.indianveggiedelight.com/wp-content/uploads/2021/08/air-fryer-paneer-tikka-featured.jpg">
+    </div>
+
+<div>
+    <h3>Paneer Tikka</h3>
+    <h4>Rs 190</h4>
+</div>
+</div>
+<div class="box">
+    <div class="image">
+        <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2013/12/spring-rolls-500x375.jpg">
+    </div>
+
+<div>
+    <h3>Spring Rolls</h3>
+    <h4>Rs 140</h4>
+</div>
+</div>
+<div class="box">
+    <div class="image">
+        <img src="https://i.ytimg.com/vi/xkMbJCtaaqA/maxresdefault.jpg">
+    </div>
+
+<div>
+    <h3>Veg Manchurian</h3>
+    <h4>Rs 120</h4>
+</div>
+</div>
+<div class="box">
+    <div class="image">
+        <img src="https://images.news18.com/ibnkhabar/uploads/2020/12/paneer-65.jpg?im=FitAndFill,width=1200,height=1200">
+    </div>
+
+<div>
+    <h3>Paneer 65</h3>
+    <h4>Rs 200</h4>
+</div>
+</div>
+</div>
+
+<div class="menu_col">
+    <h2>Main Course</h2>
+    <div class="box">
+        <div class="image">
+            <img src="https://spicecravings.com/wp-content/uploads/2022/06/Achari-Paneer-Biryani-Featured.jpg">
+        </div>
+    
+    <div>
+        <h3> Special Paneer Biryani</h3>
+        <h4>Rs 210</h4>
+    </div>
+</div>
+
+<div class="box">
+<div class="image">
+<img src="https://cookingfromheart.com/wp-content/uploads/2017/09/Veg-Biryani-in-Pressure-Cooker-6.jpg">"
+</div>
+<div>
+<h3>Special Vegetable Biryani</h3>
+<h4>Rs 170</h4>
+</div>
+</div>
+<div class="box">
+<div class="image">
+<img src="https://www.whiskaffair.com/wp-content/uploads/2020/03/Schezwan-Fried-Rice-1-3.jpg">
+</div>
+
+<div>
+<h3>Mix Schezwan Rice</h3>
+<h4>Rs 190</h4>
+</div>
+</div>
+<div class="box">
+<div class="image">
+<img src="https://www.ruchiskitchen.com/wp-content/uploads/2020/12/Paneer-butter-masala-recipe-3-500x500.jpg">
+</div>
+
+<div>
+<h3>Paneer butter Masala</h3>
+<h4>Rs 250</h4>
+</div>
+</div>
+<div class="box">
+<div class="image">
+<img src="https://static.toiimg.com/thumb/63397194.cms?width=573&height=430">
+</div>
+<div>
+<h3>Butter Kofta</h3>
+<h4>Rs 200</h4>
+</div>
+</div>
+</div>
+
+<div class="menu_col">
+    <h2>Desserts</h2>
+    <div class="box">
+        <div class="image">
+            <img src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/milkshake-b0d6105.jpg?quality=90&webp=true&resize=440,400">
+        </div>
+    
+    <div>
+        <h3>Chocolate Milkshake</h3>
+        <h4>Rs 170</h4>
+    </div>
+</div>
+
+<div class="box">
+<div class="image">
+<img src="https://bakewithshivesh.com/wp-content/uploads/2021/05/IMG_9384-scaled.jpg">
+</div>
+
+<div>
+<h3>Black forest Gateau</h3>
+<h4>Rs 180</h4>
+</div>
+</div>
+<div class="box">
+<div class="image">
+<img src="https://www.healthylifetrainer.com/wp-content/uploads/2022/04/5-minute-marshmallow-fudge-1.jpg">
+</div>
+
+<div>
+<h3>Marshmallow Fudge</h3>
+<h4>Rs 170</h4>
+</div>
+</div>
+
+<div class="box">
+    <div class="image">
+    <img src="https://www.cookingclassy.com/wp-content/uploads/2022/02/molten-lava-cake-17.jpg">
+    </div>
+    <div>
+    <h3>Chocolate Molten Lava cake</h3>
+    <h4>Rs 200</h4>
+    </div>
+    </div>
+<div class="box">
+    <div class="image">
+    <img src="https://www.fnp.com/images/pr/x/v20220202161513/valentine-s-heart-red-velvet-cake-1-kg_1.jpg">
+    </div>
+    <div>
+    <h3>Red Velvet cake</h3>
+    <h4>Rs 200</h4>
+    </div>
+    </div>
+</div>
+</div>
+    </div>
+<br>
+<br>
+    <div id="Drinks">
+<h1 style="text-align: center;font-style: normal;font-weight: bold;">Drinks</h1>
+<section class="Drink">
+    <div class="Drinks">
+        <img src="https://1.bp.blogspot.com/-rjpD9ddWI8Y/XwJRKLpqHQI/AAAAAAAAKwU/Rao_0QpHq9EgaNvyyhbv17c1NHBWUan7ACLcBGAsYHQ/s794/passion-fruit-and-mango-juice-drink.jpg">
+        <h3>Mango and Passion fruit </h3>
+        <h4>Rs 100</h4>
+    </div>
+    <div class="Drinks">
+        <img src="https://i0.wp.com/thechowdownblog.com/wp-content/uploads/2022/04/tropical-passion-fruit-cocktail.jpg?resize=675%2C900&ssl=1">
+        <h3>Passion Tropic</h3>
+        <h4>Rs 120</h4>
+
+    </div>
+    <div class="Drinks">
+        <img src="https://www.aberdeenskitchen.com/wp-content/uploads/2019/06/Fresh-Watermelon-Mojito-1.jpg">
+        <h3>Watermelon Mojito</h3>
+        <h4>Rs 120</h4>
+
+    </div>
+    <div class="Drinks">
+        <img src="https://www.seriouseats.com/thmb/rkmijvOtxOQyH3D8n2q8uc67XNk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__recipes__images__2015__04__20150323-cocktails-vicky-wasik-margarita-c84b154e757d43688de15dc8f8ca0de9.jpg">
+        <h3>Margarita</h3>
+        <h4>Rs 110</h4>
+
+    </div>
+    <div class="Drinks">
+        <img src="https://images.ctfassets.net/0lzgl3qjkmm1/VgLLUI5qBUpjqK2MEqB9m/281265f05e9a2ac4cea95ec2a418b270/Mobile-Hero-Pride-Cocktails.jpg">
+        <h3>Pride Punch-Mojito</h3>
+        <h4>Rs 100</h4>
+
+    </div>
+    <div class="Drinks">
+        <img src="https://saltandbaker.com/wp-content/uploads/2019/07/Raspberry-mojito-14.jpg">
+        <h3>Raspberry Frost</h3>
+        <h4>Rs 140</h4>
+
+    </div>
+    <div class="Drinks">
+        <img src="https://mocktail.net/wp-content/uploads/2021/08/Summer-Sunrise-Mocktail_ig.jpg">
+        <h3>Energy Sunrise</h3>
+        <h4>Rs 140</h4>
+
+    </div>
+    <div class="Drinks">
+        <img src="https://www.thechunkychef.com/wp-content/uploads/2020/07/Mixed-Berry-Fruit-Punch-group.jpg">
+        <h3>Berry Punch</h3>
+        <h4>Rs 140</h4>
+
+    </div>
+    <div class="Drinks">
+        <img src="https://www.thespruceeats.com/thmb/hZgCGe6yaJLcyOgDHMv0H6-bN20=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/virgin-pina-colada-recipe-2097115-hero-images-5-25cd3a15f6204c1d87fdf8c60b6b144e.jpg">
+        <h3>Virgin Pina Colada</h3>
+        <h4>Rs 140</h4>
+    </div>
+    </div>
+</div>
+</section>
+<br>
+<br>
+<br>
+<section class="myeve">
+    <div id="Events">
+     <p id="eve_headding">Events</p>
+     <div class="work"> 
+         <div class="weddings">
+             <a href="#"><img class="wed_link" src="https://thumbs.dreamstime.com/b/wedding-rings-being-exchanged-ceremony-194290862.jpg">
+             <div class="wed">Weddings</div>
+             </a>
+         </div>
+         <div class="Talent_shows">
+             <a href="#"><img class="wed_link" src="https://img.freepik.com/premium-vector/talent-show-illustration-with-contestant-displaying-their-skill-stage-front-judges-judging_2175-4471.jpg?w=2000"alt="" width =400 height="500">
+                 <div class="Tal_shows">Talent shows</div>
+             </a>
+         </div>
+         <div class="Standup_Comedy">
+             <a href="#"><img class="wed_link" src="https://cafemutual.com/images/article_5545646795f08aaf3703a6_611688903_0459543001594403571_s.jpg" alt="" width =400 height="500">
+                 <div class="Stand_Comedy">Standup Comedy</div>
+             </a>
+         </div>
+         <div class="Private">
+             <a href="#"><img class="wed_link" src="https://www.aucklandweddings.co.nz/laravel-filemanager/images/filemanager/private%20party%20tips/MV-EV-2016-148.jpg" alt="" width="400" height="500">
+                 <div class="ceve">Private Gatherings</div>
+             </a>
+         </div>
+        </div>
+        <div class="Birthday_parties">
+            <a href="#"><img class="wed_link" src="https://www.zonebowling.com/media/4976/zb-teens-banner-parties.jpg" alt="" width =400 height="500">
+                <div class="birth">Birthday Party</div>
+            </a>
+        </div>
+    </div>
+    
+ </section>
+ <br>
+ <br>
+ <br>
+ <div id="Contact">
+ <h1 id="section" style="text-align: center;">Contact</h1>
+<div id="Contact_row">
+    <div class="Contact_col">
+        <div>
+            <p>
+                <i class="fa fa-map-marker"></i>
+                Guntur, AndhraPradesh India
+            </p>
+            <p>
+                <a href="mailto-tejaswiabburi13@gmail.com">
+                    <i class="fa fa-envelope"></i>
+                    tejaswiabburi13@gmail.com
+                </a>
+
+            </p>
+            <p>
+                <i class="fa fa-phone-square"></i>
+                <a href="tel:+919912033184">
+                    +919912033184
+                </a>
+            </p>
+            <h3 style="text-align: left;">Follow Us</h3>
+            <p id="social">
+                <a href="#" class="fa fa-facebook"></a> 
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-twitter"></a> 
+                <a href="#" class="fa fa-youtube"></a>     
+
+            </p>
+        </div>
+    </div>
+    <div class="Contact_col">
+    <form>
+    
+        <h2>Get in touch</h2>
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+        <input type="text" placeholder="Subject">
+        <textarea rows="6" placeholder="Type Message">
+        </textarea>
+        <button>Send Message</button>
+    </form>
+</div>
+    </div>
+</div>
+<div id="about">
+    <h1 id="section" style="text-align: center;"></h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="about_row">
+        <div class="about_col">
+            <h1>About Us</h1>
+            <p>
+                Our chef's offer you perfect cooking,
+                 best served dishes with 
+                fresh ingredients and old recipes.
+                We have only carefully sourced and seasonal
+                ingredients in our disposal to make rustic dishes.
+                we provide you daily with fresh and tasty food.
+                
+
+    </p>
+
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div>
+        <h5>Copyright &copy;2023 |<a href="">YumInTum</a></h5>
+    </div>
+    <div id="top">
+        <a href="#header"><i class="fa fa-chevron-circle-up"></i></a>
+    </div>
+</div>
+
+</body>
+</html>
